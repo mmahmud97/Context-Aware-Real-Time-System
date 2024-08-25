@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Project name and language
+project(ContextAwareRealTimeSystem LANGUAGES CXX)
+
+# Include directories for header files
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# Source files for the project
+set(SOURCES
+    src/RealTimeDynamicStorage.cpp
+)
+
+# Add the executable
+add_executable(main test/main.cpp ${SOURCES})
