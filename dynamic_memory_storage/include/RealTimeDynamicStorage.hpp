@@ -1,4 +1,3 @@
-// RealTimeDynamicStorage.hpp
 #pragma once
 
 #include "IDynamicStorage.hpp"
@@ -27,8 +26,11 @@ public:
     virtual size_t getSize() const override;
     virtual size_t getCapacity() const override;
 
+    // New methods to be added
+    void remove(size_t index); // Removes an element at the specified index
+    void clear();              // Clears all elements from the storage
+
 private:
     // Function to resize the storage
     void resize();
 };
-
