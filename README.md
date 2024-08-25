@@ -113,7 +113,7 @@ Here’s an overview of the current project structure, including all the files, 
             Purpose: Provides documentation specific to the dynamic memory storage module, including usage instructions, configuration details, and examples.
             Location: CONTEXT-AWARE-REAL-TIME-SYSTEM/dynamic_memory_storage/README.md
 
-4. Folder: libs
+4. Folder: libs (Currently removed - abstract can access dynamic memory storage)
 
     Subfolder: dynamic_memory_storage (cloned submodule)
         Purpose: Contains a cloned version of the dynamic_memory_storage module as a submodule. Used to share the dynamic storage logic across different parts of the project.
