@@ -1,6 +1,6 @@
 #pragma once
 #include "../include/IStorageStrategy.hpp"
-#include "../../libs/dynamic_memory_storage/dynamic_memory_storage/include/RealTimeDynamicStorage.hpp"
+#include "../../dynamic_memory_storage/include/RealTimeDynamicStorage.hpp"
 #include <vector>
 
 template<typename ContextType>

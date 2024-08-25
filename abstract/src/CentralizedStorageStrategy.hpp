@@ -1,6 +1,6 @@
 #pragma once
 #include "../include/IStorageStrategy.hpp"
-#include "../../libs/dynamic_memory_storage/dynamic_memory_storage/include/RealTimeDynamicStorage.hpp"
+#include "../../dynamic_memory_storage/include/RealTimeDynamicStorage.hpp"
 #include <mutex>  // Optional, for thread safety if needed
 #include <vector> // Optional, for handling multiple data sources if needed
 
