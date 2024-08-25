@@ -1,7 +1,7 @@
 #include "../include/RealTimeDynamicStorage.hpp"
-#include <cstddef> // for size_t
-#include <stdexcept> // if you're using std::out_of_range
-#include <algorithm> // if you use std::copy
+#include <cstddef>   // for size_t
+#include <stdexcept> // for std::out_of_range
+#include <algorithm> // for std::copy
 
 template<typename T, typename MemoryPolicy>
 RealTimeDynamicStorage<T, MemoryPolicy>::RealTimeDynamicStorage(size_t initial_capacity)
@@ -48,6 +48,27 @@ void RealTimeDynamicStorage<T, MemoryPolicy>::resize() {
     capacity = newCapacity;
 }
 
+template<typename T, typename MemoryPolicy>
+void RealTimeDynamicStorage<T, MemoryPolicy>::remove(size_t index) {
+    if (index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+    // Shift elements to the left to fill the gap
+    for (size_t i = index; i < size - 1; ++i) {
+        array[i] = array[i + 1];
+    }
+    --size;
+}
+
+template<typename T, typename MemoryPolicy>
+void RealTimeDynamicStorage<T, MemoryPolicy>::clear() {
+    size = 0;  // Simply reset the size to 0
+    // Alternatively, you can also deallocate and reallocate the array
+    // MemoryPolicy::deallocate(array);
+    // array = MemoryPolicy::allocate(capacity);
+}
+
 // Explicit template instantiation
 template class RealTimeDynamicStorage<int, StandardAllocator<int>>;
 // Add more instantiations as needed for other types
+
