@@ -1,4 +1,0 @@
-[submodule "libs/dynamic_memory_storage"]
-	path = libs/dynamic_memory_storage
-	url = git@github.com:mmahmud97/Context-Aware-Real-Time-System.git
-	branch = dynamicMemoryStorage
