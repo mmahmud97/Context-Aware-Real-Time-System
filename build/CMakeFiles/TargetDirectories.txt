@@ -1,0 +1,4 @@
+//home/ypstiskryptos/Github/Context-Aware-Real-Time-System/build/CMakeFiles/edit_cache.dir
+//home/ypstiskryptos/Github/Context-Aware-Real-Time-System/build/CMakeFiles/rebuild_cache.dir
+//home/ypstiskryptos/Github/Context-Aware-Real-Time-System/build/dynamic_memory_storage/CMakeFiles/edit_cache.dir
+//home/ypstiskryptos/Github/Context-Aware-Real-Time-System/build/dynamic_memory_storage/CMakeFiles/rebuild_cache.dir
