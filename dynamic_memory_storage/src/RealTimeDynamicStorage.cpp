@@ -1,7 +1,7 @@
 #include "../include/RealTimeDynamicStorage.hpp"
-#include <cstddef>   // for size_t
-#include <stdexcept> // for std::out_of_range
-#include <algorithm> // for std::copy
+#include <cstddef>  // for size_t
+#include <stdexcept>  // for std::out_of_range
+#include <algorithm>  // for std::copy
 
 template<typename T, typename MemoryPolicy>
 RealTimeDynamicStorage<T, MemoryPolicy>::RealTimeDynamicStorage(size_t initial_capacity)
@@ -22,6 +22,14 @@ void RealTimeDynamicStorage<T, MemoryPolicy>::push_back(const T& value) {
 
 template<typename T, typename MemoryPolicy>
 T& RealTimeDynamicStorage<T, MemoryPolicy>::operator[](size_t index) {
+    if (index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+    return array[index];
+}
+
+template<typename T, typename MemoryPolicy>
+const T& RealTimeDynamicStorage<T, MemoryPolicy>::operator[](size_t index) const {
     if (index >= size) {
         throw std::out_of_range("Index out of range");
     }
@@ -62,10 +70,7 @@ void RealTimeDynamicStorage<T, MemoryPolicy>::remove(size_t index) {
 
 template<typename T, typename MemoryPolicy>
 void RealTimeDynamicStorage<T, MemoryPolicy>::clear() {
-    size = 0;  // Simply reset the size to 0
-    // Alternatively, you can also deallocate and reallocate the array
-    // MemoryPolicy::deallocate(array);
-    // array = MemoryPolicy::allocate(capacity);
+    size = 0;
 }
 
 // Explicit template instantiation

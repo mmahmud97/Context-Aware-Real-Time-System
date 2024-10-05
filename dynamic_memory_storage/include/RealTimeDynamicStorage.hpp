@@ -22,7 +22,11 @@ public:
 
     // Override the pure virtual functions from IDynamicStorage
     virtual void push_back(const T& value) override;
+    
     virtual T& operator[](size_t index) override;
+    
+    virtual const T& operator[](size_t index) const;
+    
     virtual size_t getSize() const override;
     virtual size_t getCapacity() const override;
 
